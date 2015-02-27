@@ -2,6 +2,8 @@ from django.conf.urls import *
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from saml2idp.views import home_page
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -16,8 +18,9 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     # Required for login:
-    (r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='account_login'),
 
     # URLs for the IDP:
     (r'^idp/', include('saml2idp.urls')),
+    url( r'^$', home_page, name="home_page"),
 )

@@ -103,7 +103,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
 )
 
-LOGIN_REDIRECT_URL = '/idp/sso/post/response/preview/'
+LOGIN_REDIRECT_URL = '/'
 
 # SAML2IDP metadata settings
 SAML2IDP_CONFIG = {
