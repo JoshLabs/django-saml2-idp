@@ -102,6 +102,7 @@ ASSERTION_SALESFORCE = (
         '<saml:Conditions NotBefore="${NOT_BEFORE}" NotOnOrAfter="${NOT_ON_OR_AFTER}">'
             '<saml:AudienceRestriction>'
                 '<saml:Audience>${AUDIENCE}</saml:Audience>'
+                '<saml:Audience>${SP_AUDIENCE}</saml:Audience>'
             '</saml:AudienceRestriction>'
         '</saml:Conditions>'
         '<saml:AuthnStatement AuthnInstant="${AUTH_INSTANT}"'

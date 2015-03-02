@@ -162,6 +162,7 @@ class Processor(object):
         soup = BeautifulStoneSoup(self._request_xml)
         request = soup.findAll()[0]
         params = {}
+        params['SP_AUDIENCE'] = request.find('saml:issuer').text
         params['ACS_URL'] = request['assertionconsumerserviceurl']
         params['REQUEST_ID'] = request['id']
         params['DESTINATION'] = request.get('destination', '')
